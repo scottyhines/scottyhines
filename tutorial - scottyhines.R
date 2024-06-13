@@ -20,3 +20,4 @@ scottyhines::run_network_analysis(df, outcome_var = "demo_performance", control_
 scottyhines::run_heartbeat(df, outcomes)
 scottyhines::run_causal_attitude_network(df, gamma = .5, threshold = F)
 scottyhines::build_means_table(df, group_var = "demo_performance", vars = outcomes)
+scottyhines::run_mixed_effects_model(data = df, outcome_vars = "attitude_work_ethic", control_vars = NULL, interest_vars = "network_betweenness", random_effects = "(1 | demo_job_level)", interaction_var = "demo_attrition", include_interaction = T)
