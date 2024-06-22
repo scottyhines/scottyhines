@@ -14,7 +14,7 @@ scottyhines::build_means_table(df, group_var = "demo_performance", vars = outcom
 scottyhines::build_correlation_table(data = df, outcome_vars = outcomes, interest_vars = vars_of_interest)
 
 # analyses
-out_ttest <- scottyhines::run_t_test(df, outcome_vars = outcomes, group_var = "demo_attrition")
+out_ttest <- scottyhines::run_t_test(df, outcome_vars = outcomes, group_var = "demo_attrition", paired = F)
 out_anova <- scottyhines::run_anova_with_contrasts(df, outcome_vars = outcomes, control_vars = "attitude_leadership",  group_var = "demo_region_code")
 out_anova$anova_summary
 out_anova$contrast_summary
