@@ -24,9 +24,10 @@ scottyhines::dataviz_scatter_item_function(df, grouping_var = "demo_job_level", 
 
 # run statistical analyses ~~~~~~~~~~
 out_ttest <- scottyhines::run_t_test(df, outcome_vars = outcomes, group_var = "demo_attrition")
-out_anova <- scottyhines::run_anova_with_contrasts(df, outcome_vars = outcomes, control_vars = "attitude_leadership",  group_var = "demo_region_code")
-out_anova$anova_summary
-out_anova$contrast_summary
+out_anova <- scottyhines::run_anova_with_contrasts(df, outcome_vars = outcomes, control_variables = "attitude_leadership",  group_var = "demo_region_code")
+out_anova$anova
+out_anova$contrasts
+out_anova$group_means
 x <- scottyhines::run_linear_regression(df, outcome_var = outcomes, control_vars = "attitude_leadership", interest_vars = vars_of_interest)
 x <- scottyhines::run_logistic_regression(df, outcome_var = "demo_attrition", control_vars = c("attitude_leadership", "attitude_innovation"), interest_vars = vars_of_interest)
 x <- scottyhines::run_hierarchical_regression(df, outcome_var = outcomes, control_vars = c("demo_tenure", "demo_region_code"), interest_vars = vars_of_interest, group_var = "demo_job_level")
